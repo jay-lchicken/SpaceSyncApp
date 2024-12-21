@@ -89,8 +89,9 @@ struct SwiftUIView: View {
                 Spacer()
             }
             .alert(isPresented: $viewModel.showAlert) {
-                Alert(title: Text("Error"), message: Text(viewModel.errormessage2))
+                Alert(title: Text("\(viewModel.title)"), message: Text(viewModel.errormessage2))
             }
+
         }
     }
 }

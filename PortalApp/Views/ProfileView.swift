@@ -1,6 +1,6 @@
 import SwiftUI
 import FirebaseAuth
-
+import SwipeToDoAction
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewViewModel()
     @State private var showDeleteConfirmation = false
@@ -13,13 +13,12 @@ struct ProfileView: View {
                     AvatarView()
                     UserDetailsView(user: user)
                     
-                    DeleteAccountButton(showDeleteConfirmation: $showDeleteConfirmation) {
-                        viewModel.deleteAccount()
-                    }
+                    
                     Spacer()
                 } else {
                     Text("Loading Profile...")
                 }
+                PasswordResetMessage()
                 Button(action: {
 
                                     let firebaseAuth = Auth.auth()
@@ -37,7 +36,14 @@ struct ProfileView: View {
                                         .cornerRadius(8)
                                 
                                 }
-                PasswordResetMessage()
+
+                Divider()
+                SwipeToDoAction(
+                    isSwiped: $showDeleteConfirmation,
+                    onSwipe: {print("Swiped")},
+                    swipeText: "Delete Account",
+                    swipeColor: .red
+                )
                 Spacer()
             }
             .padding()
@@ -103,27 +109,6 @@ struct TogglesView: View {
     var body: some View {
         VStack {
             Toggle("Dark Mode", isOn: $isDarkMode)
-        }
-        .padding()
-    }
-}
-
-struct DeleteAccountButton: View {
-    @Binding var showDeleteConfirmation: Bool
-    var onDelete: () -> Void
-    
-    var body: some View {
-        Button("Delete Account") {
-            showDeleteConfirmation = true
-        }
-        .foregroundColor(.red)
-        .alert(isPresented: $showDeleteConfirmation) {
-            Alert(
-                title: Text("Confirm Deletion"),
-                message: Text("Are you sure you want to delete your account? This action cannot be undone."),
-                primaryButton: .destructive(Text("Delete"), action: onDelete),
-                secondaryButton: .cancel()
-            )
         }
         .padding()
     }

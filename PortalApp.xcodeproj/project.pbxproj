@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		060F35372C04454A004BF68D /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 060F35362C04454A004BF68D /* GenerativeAI-Info.plist */; };
 		060F35392C04457E004BF68D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F35382C04457E004BF68D /* APIKey.swift */; };
 		060F353B2C044599004BF68D /* SpaceSyncAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F353A2C044599004BF68D /* SpaceSyncAI.swift */; };
+		06264D2E2CBAA90C005B48ED /* SwipeToDoAction in Frameworks */ = {isa = PBXBuildFile; productRef = 06264D2D2CBAA90C005B48ED /* SwipeToDoAction */; };
 		06769C252C2CDFF9000B46F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06769C242C2CDFF9000B46F8 /* Assets.xcassets */; };
 		06769C272C2CE3A5000B46F8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06769C262C2CE3A5000B46F8 /* Launch Screen.storyboard */; };
 		068EACEE2BDB73D800769C2E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EACED2BDB73D800769C2E /* InfoView.swift */; };
@@ -158,10 +159,6 @@
 		06FEEB202BDA6C0300F42912 /* PortalAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		06B8D5122CB9F74400B47D8A /* INCWORK */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = INCWORK; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		06FEEAFD2BDA6C0200F42912 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -170,6 +167,7 @@
 				060EF65D2BDFBFA900073737 /* FirebaseMessaging in Frameworks */,
 				068F49922BDA86EF00F2FC9E /* FirebaseDatabaseSwift in Frameworks */,
 				068F499A2BDA86EF00F2FC9E /* FirebaseInAppMessaging-Beta in Frameworks */,
+				06264D2E2CBAA90C005B48ED /* SwipeToDoAction in Frameworks */,
 				068F499C2BDA86EF00F2FC9E /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				068F49942BDA86EF00F2FC9E /* FirebaseFirestore in Frameworks */,
 				060F35352C044531004BF68D /* GoogleGenerativeAI in Frameworks */,
@@ -276,7 +274,6 @@
 		06FEEAF72BDA6C0200F42912 = {
 			isa = PBXGroup;
 			children = (
-				06B8D5122CB9F74400B47D8A /* INCWORK */,
 				06769C262C2CE3A5000B46F8 /* Launch Screen.storyboard */,
 				060F35362C04454A004BF68D /* GenerativeAI-Info.plist */,
 				060EF6992BE37E5600073737 /* Screen Recording 2024-05-02 at 3.50.45 PM.mov */,
@@ -357,9 +354,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				06B8D5122CB9F74400B47D8A /* INCWORK */,
-			);
 			name = PortalApp;
 			packageProductDependencies = (
 				068F498D2BDA86EF00F2FC9E /* FirebaseAuth */,
@@ -373,6 +367,7 @@
 				060EF65C2BDFBFA900073737 /* FirebaseMessaging */,
 				060F35342C044531004BF68D /* GoogleGenerativeAI */,
 				06B8D5292CB9F91B00B47D8A /* DataSave */,
+				06264D2D2CBAA90C005B48ED /* SwipeToDoAction */,
 			);
 			productName = PortalApp;
 			productReference = 06FEEB002BDA6C0200F42912 /* PortalApp.app */;
@@ -450,6 +445,7 @@
 				068F498C2BDA86EF00F2FC9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				060F35332C044531004BF68D /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 				06B8D5282CB9F91B00B47D8A /* XCRemoteSwiftPackageReference "DataSave" */,
+				06264D2C2CBAA90C005B48ED /* XCRemoteSwiftPackageReference "SwipeToDoAction" */,
 			);
 			productRefGroup = 06FEEB012BDA6C0200F42912 /* Products */;
 			projectDirPath = "";
@@ -896,6 +892,14 @@
 				minimumVersion = 0.5.3;
 			};
 		};
+		06264D2C2CBAA90C005B48ED /* XCRemoteSwiftPackageReference "SwipeToDoAction" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jay-lchicken/SwipeToDoAction";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		068F498C2BDA86EF00F2FC9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -924,6 +928,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 060F35332C044531004BF68D /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
 			productName = GoogleGenerativeAI;
+		};
+		06264D2D2CBAA90C005B48ED /* SwipeToDoAction */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06264D2C2CBAA90C005B48ED /* XCRemoteSwiftPackageReference "SwipeToDoAction" */;
+			productName = SwipeToDoAction;
 		};
 		068F498D2BDA86EF00F2FC9E /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

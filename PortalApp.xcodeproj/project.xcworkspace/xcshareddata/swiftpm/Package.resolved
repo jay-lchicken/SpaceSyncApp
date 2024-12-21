@@ -1,5 +1,5 @@
 {
-  "originHash" : "78e686104ca49a8c40948272f3f4d13271ca809ef468d44acd976246fdd4733e",
+  "originHash" : "1dcb120e3b177c738d648dd4b8032fbdd3d988f33f36eb851ef001e44a94719d",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -134,6 +134,15 @@
       "state" : {
         "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
         "version" : "1.26.0"
+      }
+    },
+    {
+      "identity" : "swipetodoaction",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jay-lchicken/SwipeToDoAction",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7406b43297e63fd2cbb16c161b7772a582eba606"
       }
     }
   ],

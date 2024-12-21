@@ -130,11 +130,12 @@ struct LoginForm: View {
                 TextField("Email", text: $viewModel.email)
                     .autocapitalization(.none)
                     .keyboardType(.emailAddress)
+                    .textContentType(.emailAddress)
                     .padding()
                     .cornerRadius(10)
                     .frame(width: 350, height: 50)
             }
-            
+
             ZStack {
                 Capsule()
                     .opacity(0)
@@ -143,11 +144,11 @@ struct LoginForm: View {
                         Capsule().stroke(.black, lineWidth: 1)
                     }
                 SecureField("Password", text: $viewModel.password)
+                    .textContentType(.password) 
                     .padding()
                     .cornerRadius(10)
                     .frame(width: 350, height: 50)
             }
-            
             Button(action: {
                 viewModel.login()
             }) {

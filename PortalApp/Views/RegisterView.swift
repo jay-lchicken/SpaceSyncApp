@@ -31,6 +31,7 @@ struct RegisterView: View {
                             Capsule().stroke(.black, lineWidth: 1)
                         }
                     TextField("Full Name", text: $viewModel.name)
+                        .textContentType(.name)
                         .padding()
                         .cornerRadius(10)
                         .autocorrectionDisabled()
@@ -47,6 +48,7 @@ struct RegisterView: View {
                         }
                     TextField("Email Address", text: $viewModel.email)
                         .padding()
+                        .textContentType(.emailAddress)
                         .cornerRadius(10)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
@@ -63,6 +65,7 @@ struct RegisterView: View {
                             Capsule().stroke(.black, lineWidth: 1)
                         }
                     SecureField("Password", text: $viewModel.password)
+                        .textContentType(.newPassword)
                         .padding()
                         .cornerRadius(10)
                         .autocorrectionDisabled()
