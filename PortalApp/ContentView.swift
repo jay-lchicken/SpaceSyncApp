@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var model = LogManagementViewModel()
     @StateObject var viewModel = MainViewViewModel()
     @AppStorage("darkMode") var darkMode: Bool = false
     @AppStorage("isDarkMode") private var isDarkMode = false
@@ -17,29 +16,10 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if isINC == true{
-                VStack {
-                    TabView{
-                        HomeView()
-                            .tabItem({
-                                Label("Home", systemImage: "house.circle")
-                            })
-                        LogView(viewModel: model)
-                            .tabItem { Label("Log", systemImage: "list.bullet") }
-                        SettingsView(viewModel: model)
-                            .tabItem { Label("Settings", systemImage: "gearshape")
-                            }
-                    }
-                }
-                .preferredColorScheme(darkMode ? .dark : .light)
-                .environment(\.sizeCategory, model.fontSize)
-            }else{
-                if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
-                    accountView
-                } else {
-                    LoginView()
-                }
-
+            if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+                accountView
+            } else {
+                LoginView()
             }
         }
         .preferredColorScheme(.light)
